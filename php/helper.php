@@ -1,5 +1,17 @@
 <?php
 
+// Helper get ABI
+function getAbi(){
+	$abifile = realpath(__DIR__ . "/abi_erc20.json");
+	$file = fopen( $abifile, "r" );
+	if( $file == false ) { return false; }
+ 	$filesize = filesize( $abifile );
+        $jabi = fread( $file, $filesize );
+        fclose( $file );
+	if(!$jabi){ return false; }
+	return $jabi;
+}
+
 // Helper function encode memo
 function makeMemo($memo)
 {
@@ -12,7 +24,7 @@ function makeMemo($memo)
         $decimal = substr(mb_encode_numericentity($ch, $convmap, 'UTF-8'), -5, 4);
         $nums[] = base_convert($decimal, 10, 16);
     }
-    return "0x" . implode("", $nums);
+    return implode("", $nums);
 }
 
 // Helper function, read .env and store in $_ENV

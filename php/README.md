@@ -36,4 +36,17 @@ const MEMO = "MY MEMO DEMO"; // memo to send
 - run the script
 `php send_coin_with_memo.php`
 
-
+# Send token (ERC20) with memo (USDT in this example)
+- Edit send_token_with_memo.php
+```php
+// VARS
+const NODE_RPC = "https://rpc.ankr.com/polygon"; // RPC Endpoint, we use ankr
+const CHAIN_ID = 0x89; // polygon mainnet
+const RECIEVER = "0x000000000000000000000000000000000000"; // coin reciever
+const CONTRACT = "0xc2132d05d31c914a87c6611c10748aeb04b58e8f"; // token contract, usdt in this case
+const AMOUNT = "1"; // amount to send (STRING!!)
+const DECIMALS = "6"; // Decimals of the token, usdt has 6
+const MEMO = "MY MEMO DEMO"; // memo to send
+```
+- run the script
+`php send_token_with_memo.php`
