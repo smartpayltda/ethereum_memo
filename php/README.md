@@ -4,6 +4,7 @@
 - php-gmp extention
 - php-mbstring extention
 - php-bcmath extention
+- php-curl extention
 
 # Install (*NIX cli)
 
