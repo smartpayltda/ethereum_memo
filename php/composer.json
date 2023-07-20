@@ -1,5 +1,5 @@
 {
     "require": {
-        "web3p/web3.php": "dev-master"
+        "drlecks/simple-web3-php": "^0.10.0"
     }
 }
